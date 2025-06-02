@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import LoginPage from "../pages/LoginPage";
 import DashboardPage from "../pages/DashboardPage";
-import NotasPage from "../pages/NotasPage";
 import TempRegisterProfe from "../components/TempRegisterProfe";
 import RegisterStudent from "../components/RegisterStudent";
 import EstudiantesPage from "../pages/EstudiantesPage";
@@ -40,14 +39,6 @@ export default function AppRouter() {
           element={
             <PrivateRoute allowedRoles={["profesor", "estudiante"]}>
               <DashboardPage />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="/notas"
-          element={
-            <PrivateRoute allowedRoles={["profesor", "estudiante"]}>
-              <NotasPage />
             </PrivateRoute>
           }
         />
